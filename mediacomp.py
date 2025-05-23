@@ -1,7 +1,7 @@
 import collections as _collections
-import graphics as _graphics
+import strype.graphics as _graphics
 import math as _math
-import sound as _sound
+import strype.sound as _sound
 
 
 ###############################################################################
