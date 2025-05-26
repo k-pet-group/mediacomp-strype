@@ -1,0 +1,26 @@
+#(=> Strype:1:std
+#(=> Section:Imports
+#(=> Library:github:neilccbrown/strype-mediacomp
+from mediacomp import * 
+#(=> Section:Definitions
+def increaseVolumeByRange (sound ) :
+    for sampleNumber  in range(0,getLength(sound))  :
+        value  = getSampleValueAt(sound,sampleNumber) 
+        setSampleValueAt(sound,sampleNumber,value*2) 
+def increaseAndDecrease (sound ) :
+    length  = getLength(sound) 
+    for index  in range(0,int(length/2))  :
+        value  = getSampleValueAt(sound,index) 
+        setSampleValueAt(sound,index,value*0.2) 
+    for index  in range(int(length/2),length)  :
+        value  = getSampleValueAt(sound,index) 
+        setSampleValueAt(sound,index,value*2) 
+#(=> Section:Main
+s  = makeSound("airplane.wav") 
+increaseVolumeByRange(s) 
+play(s) 
+
+s  = makeSound("antidisestablishmenterianism.wav") 
+increaseAndDecrease(s) 
+play(s) 
+#(=> Section:End
