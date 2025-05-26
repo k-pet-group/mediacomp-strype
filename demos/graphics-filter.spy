@@ -1,0 +1,32 @@
+#(=> Strype:1:std
+#(=> Section:Imports
+#(=> Library:neilccbrown/strype-mediacomp
+from mediacomp import * 
+#(=> Section:Definitions
+def filter1 (picture ) :
+    for pixel  in getPixels(picture)  :
+        x  = getX(pixel) 
+        if x>200  :
+            setRed(pixel,2*getRed(pixel)) 
+def filter2 (picture ) :
+    for x  in range(0,getWidth(picture))  :
+        for y  in range(0,getHeight(picture))  :
+            if x>200  :
+                pixel  = getPixel(picture,x,y) 
+                setRed(pixel,2*getRed(pixel)) 
+def filter3 (picture ) :
+    for x  in range(200,getWidth(picture))  :
+        for y  in range(0,getHeight(picture))  :
+            pixel  = getPixel(picture,x,y) 
+            setRed(pixel,2*getRed(pixel)) 
+#(=> Section:Main
+a  = makePicture("arch.jpg") 
+filter1(a) 
+show(a) 
+a  = makePicture("arch.jpg") 
+filter2(a) 
+show(a) 
+a  = makePicture("arch.jpg") 
+filter3(a) 
+show(a) 
+#(=> Section:End
