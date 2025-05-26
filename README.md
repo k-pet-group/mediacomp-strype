@@ -8,7 +8,7 @@ Importing
 To use this media computation library in Strype, copy the following two lines (for example, using the button top-right in the grey box):
 
 ```
-#(=> Library:neilccbrown/strype-mediacomp
+#(=> Library:github:neilccbrown/strype-mediacomp
 from mediacomp import * 
 ```
 

@@ -2,7 +2,9 @@ import collections as _collections
 import strype.graphics as _graphics
 import math as _math
 import strype.sound as _sound
-
+# Needed for media literals:
+from strype.graphics import load_image
+from strype.sound import load_sound
 
 ###############################################################################
 # Sound functions:
