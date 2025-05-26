@@ -17,5 +17,5 @@ Then in Strype, position your blue frame cursor at the very top of the file, in 
 Demos
 ---
  - [Graphics: Filtering](https://neilccbrown.github.io/Strype/?shared_proj_id=https%3A%2F%2Fraw.githubusercontent.com%2Fneilccbrown%2Fstrype-mediacomp%2Frefs%2Fheads%2Fmain%2Fdemos%2Fgraphics-filter.spy)
-
+ - [Graphics: Mirroring](https://neilccbrown.github.io/Strype/?shared_proj_id=https%3A%2F%2Fraw.githubusercontent.com%2Fneilccbrown%2Fstrype-mediacomp%2Frefs%2Fheads%2Fmain%2Fdemos%2Fgraphics-mirroring.spy)
 
