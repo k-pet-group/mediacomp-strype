@@ -1,6 +1,6 @@
 #(=> Strype:1:std
 #(=> Section:Imports
-#(=> Library:github:neilccbrown/strype-mediacomp
+#(=> Library:github:k-pet-group/mediacomp-strype
 from mediacomp import * 
 #(=> Section:Definitions
 def filter1 (picture ) :
