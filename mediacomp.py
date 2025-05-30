@@ -152,7 +152,7 @@ def makeSound(path):
     :returns: the sound created from the file at the given path
     Takes a filename as input, reads the file, and creates a sound from it. Returns the sound.
     """
-    return _sound.load_sound(":strype-mediacomp:sounds/" + path)
+    return _sound.load_sound(":mediacomp-strype:sounds/" + path)
 
 # Note: Not supported in browser.  (Could do this with cloud storage?)
 #def pickAFile():
@@ -613,7 +613,7 @@ def makePicture(path):
     :param path: the name of the file you want to open as a picture
     :return: a picture object made from the file
     """
-    return _graphics.load_image(":strype-mediacomp:images/" + path)
+    return _graphics.load_image(":mediacomp-strype:images/" + path)
 
 class Font:
     def __init__(self, fontFamily, size):
