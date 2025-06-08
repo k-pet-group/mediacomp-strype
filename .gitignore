@@ -1,3 +1,4 @@
 /docs-sphinx/build/
-/docs-sphinx/_static/
-/docs-sphinx/strype_sphinx_conf_defaults.py
+/docs-sphinx/source/_static/
+/docs-sphinx/source/strype_sphinx_conf_defaults.py
+/.idea/
