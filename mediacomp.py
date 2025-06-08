@@ -351,6 +351,7 @@ def _invalidateCache(picture, writeback = True):
         delattr(picture, "mediacomp_written_to")
 
 def addArc(picture, startX, startY, width, height, start, angle, color="black"):
+    # type: (_graphics.Image, float, float, float, float, float, float, str | Color) -> None
     """
     Adds an outline of an arc starting at (x,y) at an initial angle of "start"with the given width and height. The angle of the arc itself is "angle", which is relativeto "start." Default color is black.
     
@@ -369,6 +370,7 @@ def addArc(picture, startX, startY, width, height, start, angle, color="black"):
     picture.draw_oval(startX, startY, width, height, start, angle)
 
 def addArcFilled(picture, startX, startY, width, height, start, angle, color="black"):
+    # type: (_graphics.Image, float, float, float, float, float, float, str | Color) -> None
     """
     Adds a filled arc starting at (x,y) at an initial angle of "start" with the given width and height. The angle of the arc itself is "angle", which is relative to "start."
     
@@ -387,6 +389,7 @@ def addArcFilled(picture, startX, startY, width, height, start, angle, color="bl
     picture.draw_oval(startX, startY, width, height, start, angle)
 
 def addLine(picture, startX, startY, endX, endY, color="black"):
+    # type: (_graphics.Image, float, float, float, float, str | Color) -> None
     """
     Draws a line on the picture.
     :param picture: The picture to draw the line on.
@@ -401,6 +404,7 @@ def addLine(picture, startX, startY, endX, endY, color="black"):
     picture.draw_line(startX, startY, endX, endY)
 
 def addOval(picture, startX, startY, width, height, color="black"):
+    # type: (_graphics.Image, float, float, float, float, str | Color) -> None
     """
     Draws an outline of an oval on the picture.
     :param picture: The picture to draw the oval on.
@@ -416,6 +420,7 @@ def addOval(picture, startX, startY, width, height, color="black"):
     picture.draw_oval(startX, startY, width, height, 0, 360)
 
 def addOvalFilled(picture, startX, startY, width, height, color="black"):
+    # type: (_graphics.Image, float, float, float, float, str | Color) -> None
     """
     Draws a filled oval on the picture.
     :param picture: The picture to draw the oval on.
@@ -431,6 +436,7 @@ def addOvalFilled(picture, startX, startY, width, height, color="black"):
     picture.draw_oval(startX, startY, width, height, 0, 360)
 
 def addRect(picture, startX, startY, width, height, color="black"):
+    # type: (_graphics.Image, float, float, float, float, str | Color) -> None
     """
     Draws an outline of a rectangle on the picture.
     :param picture: The picture to draw the rectangle on.
@@ -446,6 +452,7 @@ def addRect(picture, startX, startY, width, height, color="black"):
     picture.draw_rect(startX, startY, width, height)
 
 def addRectFilled(picture, startX, startY, width, height, color="black"):
+    # type: (_graphics.Image, float, float, float, float, str | Color) -> None
     """
     Draws a filled rectangle on the picture.
     :param picture: The picture to draw the rectangle on.
@@ -461,6 +468,7 @@ def addRectFilled(picture, startX, startY, width, height, color="black"):
     picture.draw_rect(startX, startY, width, height)
 
 def addText(picture, xpos, ypos, text, color="black"):
+    # type: (_graphics.Image, float, float, str, str | Color) -> None
     """
     Draws text on the picture.
     :param picture: The picture to add the text to.
@@ -474,6 +482,7 @@ def addText(picture, xpos, ypos, text, color="black"):
     picture.draw_text(text, xpos, ypos, 50)
 
 def addTextWithStyle(picture, xpos, ypos, text, style, color="black"):
+    # type: (_graphics.Image, float, float, str, Font, str | Color) -> None
     """
     Draws styled text on the picture.
     :param picture: The picture to add the text to.
@@ -488,6 +497,7 @@ def addTextWithStyle(picture, xpos, ypos, text, style, color="black"):
     picture.draw_text(text, xpos, ypos, style.__size, 0, 0, style.__fontFamily)
 
 def copyInto(smallPicture, bigPicture, startX, startY):
+    # type: (_graphics.Image, _graphics.Image, float, float) -> None
     """
     Copies a smaller picture into a larger one.
     :param smallPicture: The picture to be pasted.
@@ -500,6 +510,7 @@ def copyInto(smallPicture, bigPicture, startX, startY):
     bigPicture.draw_image(smallPicture, startX, startY)
 
 def distance(color1, color2):
+    # type: (Color, Color) -> float
     """
     Returns the Cartesian distance between two colors.
     :param color1: The first color.
@@ -512,6 +523,7 @@ def distance(color1, color2):
     return _math.sqrt(r + g + b)
 
 def duplicatePicture(picture):
+    # type: (_graphics.Image) -> _graphics.Image
     """
     Creates a duplicate of the given picture.
     :param picture: The picture to duplicate.
@@ -523,40 +535,50 @@ def duplicatePicture(picture):
     return dupe
 
 def getColor(pixel):
+    # type: (Pixel) -> Color
     """
     Gets the color of a pixel.
+
     :param pixel: The pixel to get the color from.
     :return: The color of the pixel.
     """
     return pixel.get_color()
 
 def getRed(pixel):
+    # type: (Pixel) -> int
     """
     Gets the red value of a pixel.
+
     :param pixel: The pixel to extract red from.
     :return: The red component (0-255).
     """
     return pixel.get_color().red
 
 def getGreen(pixel):
+    # type: (Pixel) -> int
     """
     Gets the green value of a pixel.
+
     :param pixel: The pixel to extract green from.
     :return: The green component (0-255).
     """
     return pixel.get_color().green
 
 def getBlue(pixel):
+    # type: (Pixel) -> int
     """
     Gets the blue value of a pixel.
+
     :param pixel: The pixel to extract blue from.
     :return: The blue component (0-255).
     """
     return pixel.get_color().blue
 
 def getHeight(picture):
+    # type: (_graphics.Image) -> int
     """
     Returns the height of the picture.
+
     :param picture: The picture to measure.
     :return: The height in pixels.
     """
@@ -567,8 +589,10 @@ def _cachePixels(picture):
     picture.mediacomp_written_to = False
 
 def getPixels(picture):
+    # type: (_graphics.Image) -> list[Pixel]
     """
     Takes a picture as input and returns the sequence of Pixel objects in the picture.
+
     :param picture: The picture you want to get the pixels from.
     :return: A list of all the pixels in the picture.
     """
@@ -578,6 +602,7 @@ def getPixels(picture):
     return list([Pixel(picture, x, y, (y*width+x)*4) for y in range(picture.get_height()) for x in range(width)])
 
 def getPixel(picture, x, y):
+    # type: (_graphics.Image, int, int) -> Pixel
     """
     Gets a pixel from a specific position in the picture.
     
@@ -593,10 +618,12 @@ def getPixel(picture, x, y):
     return Pixel(picture, x, y, (y*width+x)*4)
 
 def getPixelAt(picture, xpos, ypos):
+    # type: (_graphics.Image, int, int) -> Pixel
     """ Same as getPixel. """
     return getPixel(picture, xpos, ypos)
 
 def getWidth(picture):
+    # type: (_graphics.Image) -> int
     """
     Returns the width of the picture.
     :param picture: The picture to measure.
@@ -606,6 +633,7 @@ def getWidth(picture):
 
 
 def getX(pixel):
+    # type: (Pixel) -> int
     """
     Gets the X position of a pixel within its picture
     :param pixel: The pixel to find the X-coordinate of
@@ -614,6 +642,7 @@ def getX(pixel):
     return pixel.x
 
 def getY(pixel):
+    # type: (Pixel) -> int
     """
     Gets the Y position of a pixel within its picture
     :param pixel: The pixel to find the Y-coordinate of
@@ -628,6 +657,7 @@ def _scaleColor(color, scaleFactor):
     return Color(r, g, b)
 
 def makeBrighter(color):
+    # type: (Color) -> Color
     """
     Returns a brighter version of the color.
     :param color: The color to brighten.
@@ -652,6 +682,7 @@ def makeBrighter(color):
 
 
 def makeDarker(color):
+    # type: (Color) -> Color
     """
     Returns a darker version of the color.
     :param color: The color to darken.
@@ -660,6 +691,7 @@ def makeDarker(color):
     return _scaleColor(color, 7.0/10.0)
 
 def makeColor(red, green=0, blue=0):
+    # type: (int, int, int) -> Color
     """
     Creates a color from RGB values.
     :param red: The red component (0-255).
@@ -670,6 +702,7 @@ def makeColor(red, green=0, blue=0):
     return Color(red, green, blue)
 
 def makeEmptyPicture(width, height, color="white"):
+    # type: (int, int, str | Color) -> _graphics.Image
     """
     Creates an empty picture with specified dimensions and color.
     :param width: The width of the picture.
@@ -683,6 +716,7 @@ def makeEmptyPicture(width, height, color="white"):
     return img
 
 def makePicture(path):
+    # type: (str) -> _graphics.Image
     """
     Takes a filename as input, reads the file, and creates a picture from it. Returns the picture.
     :param path: the name of the file you want to open as a picture
@@ -696,6 +730,7 @@ class Font:
         self.__size = size
 
 def makeStyle(fontName, emphasis, size):
+    # type: (str, str, int) -> Font
     """
     Takes a font name, emphasis, and size in points as input. Returns a Font object with the given parameters.
     :param fontName: The name of the font (e.g., "sansSerif").
@@ -707,6 +742,7 @@ def makeStyle(fontName, emphasis, size):
 
 
 def setColor(pixel, color):
+    # type: (Pixel, Color) -> None
     """
     Sets the specified color to a pixel.
 
@@ -720,6 +756,7 @@ def setColor(pixel, color):
 
 
 def repaint(picture):
+    # type: (_graphics.Image) -> None
     """
     Repaints the picture. Opens a new window if the picture has not been shown.
 
@@ -730,6 +767,7 @@ def repaint(picture):
 
 
 def setAllPixelsToAColor(picture, color):
+    # type: (_graphics.Image, str | Color) -> None
     """
     Sets every pixel in the picture to the specified color.
 
@@ -745,6 +783,7 @@ def setAllPixelsToAColor(picture, color):
 
 
 def setRed(pixel, redValue):
+    # type: (Pixel, int) -> None
     """
     Sets the red component of a pixel.
 
@@ -757,6 +796,7 @@ def setRed(pixel, redValue):
     setColor(pixel, Color(redValue, c.green, c.blue))
 
 def setGreen(pixel, greenValue):
+    # type: (Pixel, int) -> None
     """
     Sets the green component of a pixel.
 
@@ -770,6 +810,7 @@ def setGreen(pixel, greenValue):
 
 
 def setBlue(pixel, blueValue):
+    # type: (Pixel, int) -> None
     """
     Sets the blue component of a pixel.
 
@@ -782,6 +823,7 @@ def setBlue(pixel, blueValue):
     setColor(pixel, Color(c.red, c.green, blueValue))
 
 def show(picture):
+    # type: (_graphics.Image) -> None
     """
     Displays the specified picture.
 
