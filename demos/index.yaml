@@ -1,0 +1,19 @@
+- name: Image filtering
+  description: Filtering pixels to change their colours
+  image: graphics-filter.png
+  file: graphics-filter.spy
+  
+- name: Image mirroring
+  description: Mirroring images
+  image: graphics-mirroring.png
+  file: graphics-mirroring.spy
+
+- name: Sound echoes
+  description: Adding echoes to sounds
+  image: sound-echo.png
+  file: sound-echo.spy
+
+- name: Sound volume
+  description: Changing the volume of sounds
+  image: sound-volume.png
+  file: sound-volume.spy
